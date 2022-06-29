@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main></main>
+    
+</body>
+<script> //FRONTEND
+    async function getContent() {
+    //caso a resposta da fetch retorne erro usar o try catch
+    try { // o try vai tentar a espera da promessa e se não der certo sera capturada pelo catch
+        const response = await fetch('http://localhost:4567/') /*o fetch promete que vai ao endereço solicitado e retorna com a solicitação, mas demora um pouco. Para esperar essa promisse pode usar depois do endereço solicitado fetch(location.href = 'http://localhost:4567/').then() ou usar um await antes do fetch => await fetch(location.href = 'http://localhost:4567/') colocando a resposta dentro de uma variavel const response = await fetch(location.href = 'http://localhost:4567/'). O AWAIT funciona somente dentro de uma ASYNC FUNCTION*/ 
+        //para pegar a informação do body da resposta acessa abaixo
+        const data = await response.json() //cria uma variavel para esperar (await) response transforme os dados em json
+        //console.log(data) para ver os dados formatado em json
+        show(data) //apos criar a function que criará uma lista para cada usuario, SHOW()DATA mostrara na tela
+    } catch (error) {
+        console.error('error')
+    }
+
+    //usando a function
+}
+getContent() 
+
+//IMPRIMIR NA TELA OS DADOS FORMATADOS DA RESPONSE
+function show(users){
+    let output = ''
+
+    for(let user of users){ //vai entrar dentro de users pegar o primeiro user e execulta algo dentro do for
+        output += `<li>${user.name}</li>` //cria uma lista para ser impresso ordenadamente na tela
+    
+    }
+
+    document.querySelector('main').innerHTML = output 
+}
+</script>
+</html>
