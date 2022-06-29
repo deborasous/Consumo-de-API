@@ -14,14 +14,14 @@
     1.2- SERVIDO DENTRO DO ARQUIVO SERVER.JS
 
 1.4 Habilitar o CORS
-    1.4 - CORS é um controle de acesso para quando um servidor esta conversando com o outro servidor, ou seja a nossa API não foi liberada para outros lugares que não seja para a 'http://localhost:4567/', quer dizer que não é possivel acessar a API direto pelo http://localhost:3000. Somente digitando no console do navegador location.href = 'http://localhost:4567/' ou no search do navegador 'http://localhost:4567/
+    1.4 - CORS é um controle de acesso para quando um servidor esta conversando com o outro servidor ou seja a nossa API não foi liberada para outros lugares que não seja para a 'http://localhost:4567/', quer dizer que não é possivel acessar a API direto pelo http://localhost:3000. Somente digitando no console do navegador location.href = 'http://localhost:4567/' ou no search do navegador 'http://localhost:4567/
      
     1.4 - Por isso é necessário habilitar o CORS dentro do server.js
 
 1.5 Habilitar o nodemon para iniciar o server
     1.5 - habilitar o nodemon no package.json para que não precise ficar cancelando e rodando o node server.js, assim será automatico
 
-////node server.js (no termial), se n der erro, ja está rodando o servidor
+node server.js (no termial), se não der erro, já está rodando o servidor
 
 
 ## CONSUMIR API - FRONTEND
